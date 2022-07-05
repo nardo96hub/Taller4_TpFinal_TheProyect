@@ -1,0 +1,25 @@
+<perfil-header [per]="perfil" (evento)="descargar($event)" (oscuro)="modoOscuro($event)"></perfil-header>
+<div #pdf class="contenido" [ngClass]="{'oscuro':oscuro}">
+    
+    <div class="borde">
+        <perfil-foto [per]="perfil"></perfil-foto>
+    </div>
+    <div class="borde">
+        <perfil-acerca [per]="perfil"></perfil-acerca>
+    </div>
+    <div  class="borde">
+        <perfil-exp [per]="perfil"></perfil-exp>
+    </div>
+    <div  class="borde">
+        <perfil-edu [per]="perfil"></perfil-edu>
+    </div>
+    <div  class="borde">
+        <perfil-skill [per]="perfil"></perfil-skill>
+    </div>
+    <div class="borde">
+        <perfil-proyecto [per]="perfil"></perfil-proyecto>
+    </div>
+
+</div>
+
+<app-footer [oscuro]="oscuro"></app-footer>

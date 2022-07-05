@@ -1,0 +1,14 @@
+.navbar{
+    justify-content: space-between;
+   height: 45px;
+   background-color:aquamarine;
+}
+.izq{
+    padding-right: 1rem;
+    margin-top: 1px;
+}
+.logo{
+    padding-top: 10px;
+    height: 110px;
+    width: 180px;
+}

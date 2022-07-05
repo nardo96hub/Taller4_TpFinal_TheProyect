@@ -1,0 +1,38 @@
+
+
+
+    <h2>Educación <a (click)="openDialogCrearEdu()" class="icono" ><mat-icon>add_circle</mat-icon></a></h2>
+    <div >
+
+        <div *ngIf="per">
+            <div *ngFor="let edu of per.educacion">
+                <mat-grid-list cols="3" rowHeight="75px" >
+                    <mat-grid-tile colspan="1" class="test">
+                        <div class="test">
+                            <img src="../../../assets/img/icono_educacion.png" alt="" class="imagen">
+                        </div>
+                        </mat-grid-tile>
+                    <mat-grid-tile colspan="1" rowspan="2" >
+                        <div >
+                            <p class="titulo">{{edu.lugar}}</p>
+                            <p>Titulo: {{edu.titulo}}</p>
+
+                            <p class="descripcion">{{edu.anio}}</p>
+
+                        </div>
+                    </mat-grid-tile>
+                    <mat-grid-tile colspan="1">
+                        <span>
+                            <a (click)="eliminarEdu(edu.id_Edu)" class="icono">
+                                <mat-icon>delete</mat-icon>
+                            </a>
+                            <a (click)="openDialogEditarEdu(edu)" class="icono">
+                                <mat-icon>edit</mat-icon>
+                            </a>
+                        </span>
+                    </mat-grid-tile>
+                </mat-grid-list>
+                
+            </div>
+        </div>
+    </div>

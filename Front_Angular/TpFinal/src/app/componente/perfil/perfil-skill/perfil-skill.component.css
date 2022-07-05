@@ -1,0 +1,33 @@
+.icono{
+    font-size: 25px;
+   float: right;
+    padding-right: 5px;
+    padding-left: 5px;
+    text-decoration: none;
+}
+.iconos{
+    font-size: 25px;
+   
+    padding-right: 5px;
+    padding-left: 5px;
+    text-decoration: none;
+}
+a{
+    color: aqua;
+}
+.texto{
+   margin-left: 27px;
+   color: rgba(226, 214, 41, 0.849);
+   font-weight: bold;
+}
+.contenedor{
+    margin: 10px;
+}
+.centrar>::ng-deep.mat-grid-tile-content{
+    justify-content: center !important;
+}
+h2{
+    color: darkred;
+    font-weight: bold;
+    font-size: 27;
+}

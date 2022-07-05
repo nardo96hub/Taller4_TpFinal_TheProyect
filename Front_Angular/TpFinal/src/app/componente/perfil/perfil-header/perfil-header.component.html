@@ -1,0 +1,46 @@
+<mat-toolbar class="navbar"[ngClass]="{'oscuro':modoOscuro}">
+    
+    <img src="../../../../assets/img/logo.png" alt="" class="logo">
+        <div class="izq">
+            
+        
+            <span style="margin-right: 5px;">
+                <mat-slide-toggle [(ngModel)]="modoOscuro" (click)="modo()">
+                    <mat-icon>{{(modoOscuro)? 'brightness_7':'brightness_3'}}</mat-icon>
+                </mat-slide-toggle>
+            </span>
+            <span style="margin-right: 5px;">
+                <button mat-button [matMenuTriggerFor]="redes">
+                    Redes
+                </button>
+                <mat-menu #redes="matMenu" xPosition="before">
+                    <a [href]="per?.infoPersonal?.redes?.facebook" target="_blank" class="ingresar"><button mat-menu-item><mat-icon class="facebook">facebook</mat-icon><span class="facebook">Facebook</span></button></a>
+                    <a [href]="per?.infoPersonal?.redes?.twitter" target="_blank" class="ingresar"><button mat-menu-item><mat-icon svgIcon="twitter" class="twitter"></mat-icon><span class="twitter">Twitter</span></button></a>
+                    <a [href]="per?.infoPersonal?.redes?.instagram" target="_blank" class="ingresar"><button mat-menu-item><mat-icon svgIcon="instagram" class="instagram"></mat-icon><span class="instagram">Instagram</span></button></a>
+                    <a [href]="per?.infoPersonal?.redes?.github" target="_blank" class="ingresar"><button mat-menu-item><mat-icon svgIcon="github" class="github"></mat-icon><span class="github">Github</span></button> </a>
+                    <a [href]="per?.infoPersonal?.redes?.linkedin" target="_blank" class="ingresar"><button mat-menu-item><mat-icon svgIcon="linkedin" class="linkedin"></mat-icon><span class="linkedin">Linkedin</span></button></a>
+                </mat-menu>
+            </span>
+        
+
+            <span>
+                <button mat-button [matMenuTriggerFor]="menu">
+
+                    <span>
+                        <span>
+                            <img style="margin-top: 10px;"
+                                [src]="per?.imagen?.perfil"
+                                alt="Foto Perfil" class="imagen">
+                        </span>
+                    </span> {{per?.infoPersonal?.ape}} {{per?.infoPersonal?.nom}}
+                </button>
+                <mat-menu #menu="matMenu">
+                
+                    <button mat-menu-item (click)="regresar()">Volver</button>
+                    <button mat-menu-item (click)="descargarPDF($event)">Descargar Perfil</button>
+                    <button mat-menu-item (click)="logout()">Logout</button>
+                </mat-menu>
+            </span>
+        </div>
+    
+</mat-toolbar>

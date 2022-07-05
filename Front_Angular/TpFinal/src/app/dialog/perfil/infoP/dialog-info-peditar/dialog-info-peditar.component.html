@@ -1,0 +1,117 @@
+<!--
+     infoPEditar:FormGroup
+  fotoEditar:FormGroup
+  redesEditar:FormGroup
+-->
+<h2 mat-dialog-title>Editar</h2>
+<mat-dialog-content>
+    <mat-tab-group>
+        <mat-tab label="Fotos">
+            <div>
+                <h3>Edicion de Fotos</h3>
+                <div [formGroup]="fotoEditar" >
+                    <mat-form-field >
+                        <mat-label>Portada</mat-label>
+                        <input matInput  placeholder="Ingrese url de su Foto de Portada" (keydown)="imagenPortada($event)" formControlName="portada">
+                    
+                    </mat-form-field>
+                    <button mat-raised-button  color="accent" class="boton" (click)="volverPortada()">Volver Original</button>
+                    <button mat-raised-button  color="accent" (click)="borrarPortada()">Borrar Foto Actual</button>
+                    <span *ngIf="fPortada">
+                        <img [src]="fPortada" alt="fotoPortada" class="foto">
+                    </span>
+                    
+                    <br>
+
+                    <mat-form-field>
+                        <mat-label>Perfil</mat-label>
+                        <input matInput  placeholder="Ingrese url de su Foto de Perfil" (keyup)="imagenPerfil($event)" formControlName="perfil">
+                    
+                    </mat-form-field>
+                    <button mat-raised-button  color="accent" class="boton" (click)="volverPerfil()">Volver Original</button>
+                    <button mat-raised-button  color="accent" (click)="borrarPerfil()">Borrar Foto Actual</button>
+                    <span *ngIf="fPerfil">
+                        <img [src]="fPerfil" alt="fotoPerfil" class="foto">
+                    </span>
+                    <br>
+                </div>
+                
+            </div> 
+            <div>
+                <button mat-raised-button mat-dialog-close color="primary">Salir</button>
+                <button mat-raised-button  color="primary" [attr.disable]="isFormValidF()" (click)="editarFotos()" cdkFocusInitial>Editar Fotos</button>
+            </div>
+        </mat-tab>
+        <mat-tab label="Informacion Personal">
+            <div >
+                
+                <h3>Edicion de InfoP</h3>
+                <div [formGroup]="infoPEditar">
+                    <mat-form-field>
+                        <mat-label>Nombre</mat-label>
+                        <input matInput  placeholder="Ingrese su Nombre" formControlName="nombre">
+                    
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Apellido</mat-label>
+                        <input matInput  placeholder="Ingrese su Apellido" formControlName="apellido">
+                    
+                    </mat-form-field><br>
+
+                    <mat-form-field>
+                        <mat-label>Puesto</mat-label>
+                        <input matInput  placeholder="Ingrese su puesto Actual" formControlName="puesto">
+                    
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Localidad</mat-label>
+                        <input matInput  placeholder="Ingrese su Localidad" formControlName="localidad">
+                    
+                    </mat-form-field>
+
+                </div>
+            </div>
+            <div>
+                <button mat-raised-button mat-dialog-close color="primary">Salir</button>
+                <button mat-raised-button  color="primary" [attr.disable]="isFormValidIP()" (click)="editarInfoP()" cdkFocusInitial>Editar Info Personal</button>
+            </div>
+        </mat-tab>
+        <mat-tab label="Redes Sociales">
+            <div>
+                <h3>Edicion de redes Sociales</h3>
+                <div [formGroup]="redesEditar">
+                    <mat-form-field>
+                        <mat-label>Facebook</mat-label>
+                        <input matInput  placeholder="Ingrese su cuenta de Facebook" formControlName="facebook">
+                    
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Twitter</mat-label>
+                        <input matInput  placeholder="Ingrese su cuenta de Twitter" formControlName="twitter">
+                    
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Instagram</mat-label>
+                        <input matInput  placeholder="Ingrese su cuenta de Instagram" formControlName="instagram">
+                    
+                    </mat-form-field><br>
+                    <mat-form-field>
+                        <mat-label>Github</mat-label>
+                        <input matInput  placeholder="Ingrese su cuenta de Github" formControlName="github">
+                    
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Linkedin</mat-label>
+                        <input matInput  placeholder="Ingrese su cuenta de Linkedin" formControlName="linkedin">
+                    
+                    </mat-form-field><br>
+                </div>
+            
+            </div>
+            <div >
+                <button mat-raised-button mat-dialog-close color="primary">Salir</button>
+                <button mat-raised-button  color="primary" [attr.disable]="isFormValidR()" (click)="editarRedes()" cdkFocusInitial>Editar Redes Sociales</button>
+            </div>
+        </mat-tab>
+    </mat-tab-group>
+</mat-dialog-content>

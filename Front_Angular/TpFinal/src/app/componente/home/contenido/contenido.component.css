@@ -1,0 +1,58 @@
+.fondo{
+   /* background-image: url(https://img.freepik.com/vector-gratis/fondo-redes-tecnologia-poligono-verde-claro-abstracto-lineas-puntos-azules_169151-70.jpg);  */
+   background-image: url(../../../../assets/img/fondo_home.jpg);  
+    background-size:     cover;                    
+    background-repeat:   no-repeat;
+    background-position: center center;
+    width:100%;
+    min-height: 325px;
+    height: 60%;
+    font-weight:bold;
+  
+}
+.frase{
+    font-size: 27px;
+    padding: 70px 50px 40px 50px;
+}
+.usuarios{
+    font-size: 23px;
+    padding: 10px 50px;
+}
+::ng-deep.mat-list-item{
+    font-size: 21px !important;
+}
+a:link, a:visited, a:active{
+    text-decoration: none;
+    color: rgba(190, 5, 135, 0.644);
+}
+.tit{
+    font-size:22px;
+    color: rgba(18, 4, 212, 0.925);
+    font-weight: bold;
+}
+.oscuro{
+    color: rgba(255, 255, 255, 0.925);
+}
+.oscuro.fondo{
+   
+   background-image: url("https://w0.peakpx.com/wallpaper/855/879/HD-wallpaper-blue-abstract-fantasy-abstract-blue-dark.jpg");   
+   background-size:     cover;                    
+   background-repeat:   no-repeat;
+   background-position: center center;
+   width:100%;
+   min-height: 325px;
+   height: 60%;
+   font-weight:bold;
+}
+.oscuro a:link,.oscuro a:visited,.oscuro a:active{
+    text-decoration: none;
+    color: rgba(243, 220, 16, 0.877);
+}
+.oscuro .tit{
+    font-size:22px;
+    color: rgba(6, 230, 211, 0.925);
+    font-weight: bold;
+}
+.oscuro span{
+    color: rgba(168, 250, 157, 0.986);
+}

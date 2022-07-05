@@ -1,0 +1,118 @@
+
+<h2>Hard Skills & Soft Skills <a (click)="openDialogCrearSkill()" class="icono" ><mat-icon>add_circle</mat-icon></a></h2>
+
+<div>
+    <div>
+
+        <mat-grid-list cols="3" rowHeight="150px">
+            <mat-grid-tile colspan="1" class="centrar" *ngFor="let skill of per?.skill">
+                <div>
+                    <span class="texto">{{skill.lenguaje}}</span>
+            
+                    <mat-progress-spinner
+                        class="example-margin"
+                        color="primary"
+                        mode="determinate"
+                        [value]="porcentaje(skill.nivel)">
+                    </mat-progress-spinner>
+                    <span class="contenedor">
+                       
+                        <a (click)="openDialogEditarSkill(skill)" class="iconos">
+                            <mat-icon>edit</mat-icon>
+                        </a> 
+                        <a (click)="eliminarSkill(skill.id_Skill)" class="iconos">
+                            <mat-icon>delete</mat-icon>
+                        </a>
+                    </span>
+         
+
+                </div>
+            </mat-grid-tile>
+            
+        </mat-grid-list>
+        
+
+        
+    </div>
+</div>
+<!--
+
+<div class="row" *ngIf="info.skill">
+    <div  *ngFor="let skills of info.skill, let i=index" class="col-sm-4 col-md-4 col-lg-4">
+     
+        <div [ngSwitch]="skills.nivel" id="borrar">
+        
+            <span *ngSwitchCase="'basico'">
+                <circle-progress
+                    [percent]="25"
+                    [radius]="85"
+                    [title]="skills.lenguaje.toUpperCase()"
+                    [showUnits]="false"
+                    [showSubtitle]="false"
+                    [titleColor]="'blue'"
+                    [titleFontSize]="'1em'"
+                    [outerStrokeWidth]="8"
+                    [innerStrokeWidth]="2"
+                    [outerStrokeColor]="'#78C000'"
+                    [innerStrokeColor]="'#C7E596'"
+                    [animation]="true"
+                    [animationDuration]="600"
+                    >
+                </circle-progress>
+            </span>
+            <span *ngSwitchCase="'intermedio'">
+            
+                <circle-progress
+                    [percent]="50"
+                    [radius]="85"
+                    [title]="skills.lenguaje.toUpperCase()"
+                    [showUnits]="false"
+                    [showSubtitle]="false"
+                    [titleColor]="'blue'"
+                    [titleFontSize]="'1em'"
+                    [outerStrokeWidth]="8"
+                    [innerStrokeWidth]="2"
+                    [outerStrokeColor]="'#78C000'"
+                    [innerStrokeColor]="'#C7E596'"
+                    [animation]="true"
+                    [animationDuration]="600"
+                    >
+                </circle-progress>
+            </span>
+            <span *ngSwitchDefault>
+        
+                <circle-progress
+                    [percent]="99"
+                    [radius]="85"
+                    [title]="skills.lenguaje.toUpperCase()"
+                    [showUnits]="false"
+                    [showSubtitle]="false"
+                    [titleColor]="'blue'"
+                    [titleFontSize]="'1em'"
+                    [outerStrokeWidth]="8"
+                    [innerStrokeWidth]="2"
+                    [outerStrokeColor]="'#78C000'"
+                    [innerStrokeColor]="'#C7E596'"
+                    [animation]="true"
+                    [animationDuration]="600"
+                    >
+                </circle-progress>
+            </span>
+            <span *ngIf="Login">
+        <a href="#" class="iconos" data-bs-toggle="modal" data-bs-target="#editarSkill" (click)="editar_skill(skills)"><svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor"
+                class="bi bi-pencil" viewBox="0 0 16 16">
+                <path
+                    d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z" />
+            </svg>
+        </a>
+        <a href="#borrar" class="iconos" (click)="borrarSkillId(skills)"><svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor"
+                class="bi bi-trash-fill" viewBox="0 0 16 16">
+                <path
+                    d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
+            </svg>
+        </a>
+     </span>
+      </div>
+    </div>
+ 
+</div>-->

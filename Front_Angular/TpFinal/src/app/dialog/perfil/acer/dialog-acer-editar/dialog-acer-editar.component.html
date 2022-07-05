@@ -1,0 +1,16 @@
+<h1 mat-dialog-title>Editar Acerca De Mi</h1>
+<mat-dialog-content>
+    <div [formGroup]="acerEditar">
+        
+        <mat-form-field>
+            <mat-label>Descripcion de ti </mat-label>
+            <textarea matInput  placeholder="Descripcion sobre ti" formControlName="acer"></textarea>
+        </mat-form-field>
+
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-raised-button mat-dialog-close color="primary">Salir</button>
+    <button mat-raised-button  color="primary" [attr.disable]="isFormValid()" (click)="editarAcer()" cdkFocusInitial>Editar Acerca de ti</button>
+</mat-dialog-actions>
+

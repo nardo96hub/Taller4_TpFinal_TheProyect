@@ -1,0 +1,21 @@
+<div class="fondo" [ngClass]="{'oscuro':oscuro}">
+    <div class="frase">
+        <p>
+            Bienvenido a la comunidad más grande de la red a nivel laboral
+        </p>
+        <p>Si todavia no te uniste haz
+            click aqui para
+            <a href="/registro">Registrarse</a>
+        </p>
+
+    </div>
+    <div class="usuarios">
+        <p>Algunos Usuarios:</p>
+       <mat-list>
+            <mat-list-item *ngFor="let user of usuarios">
+                <span><span class="tit">Usuario:</span> {{user.usuario}} - <span class="tit">Contraseña:</span> {{user.usuario}} - <span class="tit">Rol:</span> {{user.roles[0].rol}} </span>
+            </mat-list-item>
+       
+        </mat-list>
+    </div>
+</div>

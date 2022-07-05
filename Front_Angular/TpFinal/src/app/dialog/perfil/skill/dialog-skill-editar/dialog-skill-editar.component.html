@@ -1,0 +1,21 @@
+<h1 mat-dialog-title>Editar Skill</h1>
+<mat-dialog-content>
+   <div [formGroup]="skillEditar" >
+    <mat-form-field>
+        <mat-label>Lenguaje</mat-label>
+        <input matInput  placeholder="Ingrese Lenguaje" formControlName="lenguaje" required>
+        
+    </mat-form-field><br>
+    <mat-form-field>
+        <mat-label>Elija nivel</mat-label>
+        <mat-select formControlName="nivel" required>
+            <mat-option *ngFor="let nivel of niveles" [value]="nivel">{{nivel}}</mat-option>
+       </mat-select>
+    </mat-form-field>
+    </div>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+    <button mat-raised-button mat-dialog-close color="primary">Salir</button>
+    <button mat-raised-button  color="primary" [attr.disable]="isFormValid()" (click)="editarSkill()" cdkFocusInitial>Editar Skill</button>
+</mat-dialog-actions>

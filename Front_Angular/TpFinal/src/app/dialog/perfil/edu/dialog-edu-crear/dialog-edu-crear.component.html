@@ -1,0 +1,22 @@
+<h1 mat-dialog-title>Crear Educacion</h1>
+<mat-dialog-content>
+    <div [formGroup]="eduCrear">
+        <mat-form-field>
+            <mat-label>Lugar donde se recibio</mat-label>
+            <input matInput  placeholder="Ingrese Lugar donde se recibio" formControlName="lugar">
+        </mat-form-field><br>
+        <mat-form-field>
+            <mat-label>Titulo </mat-label>
+            <input matInput  placeholder="Ingrese su titulo" formControlName="titulo">
+        </mat-form-field><br>
+        <mat-form-field>
+            <mat-label>Año que se recibio</mat-label>
+            <input matInput  placeholder="Ingrese añio de cuando se recibio" formControlName="anio">
+        </mat-form-field>
+
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-raised-button mat-dialog-close color="primary">Salir</button>
+    <button mat-raised-button  color="primary" [attr.disable]="isFormValid()" (click)="crearEdu()" cdkFocusInitial>Crear Educacion</button>
+</mat-dialog-actions>

@@ -1,0 +1,44 @@
+.navbar{
+    justify-content: space-between;
+    height:65px;
+   background-color:aquamarine;
+}
+.logo{
+    padding-top: 10px;
+    height: 110px;
+    width: 180px;
+}
+.der{
+    padding-right: 1rem;
+    margin-top: 1px; 
+}
+
+a{
+     margin: 1px 5px 2px 0;
+}
+.imagen{
+    border-radius: 50%;
+    height: 45px;
+    width:45px;
+    margin-left: 10px;
+    border: 4px solid;
+    border-image-slice: 1;
+	border-width: 1px;
+	border-color: #bf2e2e;
+}
+
+/* Modo Oscuro*/
+.oscuro.navbar{
+    background-color:rgb(5, 21, 165);
+    color: rgba(255, 255, 255, 0.925);
+}
+.oscuro .imagen{
+    border-radius: 50%;
+    height: 45px;
+    width:45px;
+    margin-left: 10px;
+    border: 4px solid;
+    border-image-slice: 1;
+	border-width: 1px;
+	border-color: #00fff2;
+}

@@ -1,0 +1,69 @@
+.fondo{
+    background-color: brown;   
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.ingresar{
+    margin: 5px;
+}
+.imagen{
+    border-radius: 50%;
+    height: 45px;
+    width:45px;
+    margin-left: 10px;
+    border: 4px solid;
+    border-image-slice: 1;
+	border-width: 1px;
+	border-color: #2ebfa5;
+}
+.titulo{
+    font-weight: bold;
+    font-style: italic;
+    font-size: 21px;
+   padding-top: 25px;
+}
+.info{
+    font-size: 20px;
+    font-weight: normal;
+}
+.facebook:hover{
+    color: blue !important;
+}
+  
+.instagram:hover{
+    color: violet !important;
+}
+  
+.twitter:hover{
+    color: skyblue !important;
+}
+.github:hover{
+    color: rgb(255, 255, 255) !important;
+}
+.linkedin:hover{
+    color: rgb(7, 7, 7) !important;
+}
+
+a{
+    color: green;
+}
+
+.oscuro{
+    background-color: rgb(197, 93, 7);
+    color: rgb(8, 204, 57);
+}
+.oscuro a{
+    color:brown; 
+}
+.oscuro .imagen{
+    border-radius: 50%;
+    height: 45px;
+    width:45px;
+    margin-left: 10px;
+    border: 4px solid;
+    border-image-slice: 1;
+	border-width: 1px;
+	border-color: #0c352d;
+}
+

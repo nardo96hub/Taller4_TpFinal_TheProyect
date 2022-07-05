@@ -1,0 +1,114 @@
+
+
+    <div #pdf>
+        <div class="contenedor">
+            <!--Foto-->
+            <div class="borde">
+            <div >
+                    <img [src]="per?.imagen?.portada" alt="Foto de portada"
+                        class="img-portada">
+                    <img [src]="per?.imagen?.perfil"
+                        alt="Foto del usuario" class="img-profile bordes">
+                </div>
+                <div class="Info">
+                    <p>NomYApe: {{per?.infoPersonal?.nom}} {{per?.infoPersonal?.ape}}</p>
+                    <div >
+                        <p>Puesto: {{per?.puesto}}</p>
+                        <p>Localidad: {{per?.infoPersonal?.localidad}}</p>
+                    </div>
+                </div>
+            </div>
+            <!--Acerca-->
+            <div class="borde">
+                <h2>Acerca de mi</h2>
+                <p>{{per?.acer?.acer}}</p>
+            </div>
+        
+            <div class="borde">
+                <h2>Experiencia </h2>
+                <div *ngFor="let exp of per?.experiencia">
+                    
+                    <mat-grid-list cols="3" rowHeight="75px">
+                        <mat-grid-tile colspan="1" class="test">
+                        <img src="../../../assets/img/icono_experiencia.png"
+                                alt="" class="imagen">
+                        </mat-grid-tile>
+                        <mat-grid-tile colspan="1" rowspan="3">
+                            <div>
+                                <p class="titulo">{{exp.titulo}}</p>
+                                <p>Empresa: {{exp.empresa}} </p>
+                                <p class="infoExtra">"{{exp.anio}}- {{exp.jornada}}</p>
+                                <p class="infoExtra">{{exp.lugar}}</p>                             
+                            </div>
+                        </mat-grid-tile> 
+                    </mat-grid-list>
+                </div>
+            
+            </div>
+        
+            <div class="borde">
+                <h2>Educación</h2>
+                <div >
+                    <div *ngFor="let edu of per?.educacion">
+                        <mat-grid-list cols="3" rowHeight="75px" >
+                            <mat-grid-tile colspan="1" class="test">
+                                <div class="test">
+                                    <img src="../../../assets/img/icono_educacion.png" alt="" class="imagen">
+                                </div>
+                            </mat-grid-tile>
+                            <mat-grid-tile colspan="1" rowspan="2" >
+                                <div >
+                                    <p class="titulo">{{edu.lugar}}</p>
+                                    <p>Titulo: {{edu.titulo}}</p>
+                                    <p class="infoExtra">{{edu.anio}}</p>
+
+                                </div>
+                            </mat-grid-tile>
+                        
+                        </mat-grid-list>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="borde">
+                <h2>Hard Skills & Soft Skills </h2> 
+                <div>
+                    <mat-grid-list cols="3" rowHeight="150px">
+                        <mat-grid-tile colspan="1" class="centrar" *ngFor="let skill of per?.skill">
+                            <div>
+                                <span class="texto">{{skill.lenguaje}}</span>
+                                <mat-progress-spinner
+                                    class="example-margin"
+                                    color="accent"
+                                    mode="determinate"
+                                    [value]="porcentaje(skill.nivel)">
+                                </mat-progress-spinner>
+                            </div>
+                        </mat-grid-tile>            
+                    </mat-grid-list>
+                </div>
+            
+            </div>
+        
+            <div class="borde">
+                <h2>Proyecto</h2>
+                <div class="proyecto">
+                    
+                    <div *ngFor="let proy of per?.proyecto">
+                        <p>
+                            <a [href]="proy.link"><span class="tit">{{proy.nombreP}}</span></a>
+                        </p>
+                        <p class="desc">{{proy.descripcion}}</p>
+                    </div>
+                
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Salir</button>
+    <button mat-button [mat-dialog-close]="true" (click)="descargarPDF()" cdkFocusInitial>Descargar Perfil</button>
+
+</mat-dialog-actions>

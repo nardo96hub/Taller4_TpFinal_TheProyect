@@ -1,0 +1,40 @@
+<h1 mat-dialog-title>Crear Experiencia</h1>
+<mat-dialog-content>
+   <div [formGroup]="expCrear" >
+        <mat-form-field>
+            <mat-label>Titulo</mat-label>
+            <input matInput  placeholder="Ingrese Titulo de Experiencia" formControlName="titulo">
+        
+        </mat-form-field><br>
+
+        <mat-form-field>
+            <mat-label>Empresa</mat-label>
+            <input matInput  placeholder="Ingrese Empresa donde trabajo" formControlName="empresa">
+        
+        </mat-form-field><br>
+
+        <mat-form-field>
+            <mat-label>Jornada</mat-label>
+            <input matInput  placeholder="Ingrese la Jornada donde trabajo" formControlName="jornada">
+        
+        </mat-form-field><br>
+
+        <mat-form-field>
+            <mat-label>Anio</mat-label>
+            <input matInput  placeholder="Ingrese el tiempo que trabajo" formControlName="anio">
+        
+        </mat-form-field><br>
+
+        <mat-form-field>
+            <mat-label>Lugar</mat-label>
+            <input matInput  placeholder="Ingrese lugar donde trabajo" formControlName="lugar">
+        
+        </mat-form-field><br>
+   
+    </div>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+    <button mat-raised-button mat-dialog-close color="primary">Salir</button>
+    <button mat-raised-button  color="primary" [attr.disable]="isFormValid()" (click)="crearExp()" cdkFocusInitial>Crear Experiencia</button>
+</mat-dialog-actions>

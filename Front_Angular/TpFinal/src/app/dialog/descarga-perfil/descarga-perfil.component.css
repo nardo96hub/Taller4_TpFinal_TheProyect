@@ -1,0 +1,110 @@
+
+.contenedor{
+    padding: 5px 0;
+   background-image: url(../../../assets/img/programador_perfil.png);
+ background-size: 100% 100%;
+}
+.borde{
+    border-radius: 40px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.849);
+    padding: 10px 15px;
+    margin: 10px 30px 10px 30px;
+     
+}
+.img-portada {
+    width: 100%;
+    height: 170px;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    background-size: 100% 100%;
+
+}
+    
+.img-profile {
+
+    
+    margin-top: -60px;
+    margin-left: 20px;
+    left: 45px;
+    bottom: -20px;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+}
+.bordes{
+    border: 5px solid;
+    border-image-slice: 1;
+	border-width: 3px;
+	border-color: #bf2e2e;
+    
+}
+.Info{
+    margin-top: 0.5%;
+    font-size: 15px;
+    color: darkred;
+    
+}
+.imagen{    
+    height: 50px;
+    width: 50px;  
+}
+.titulo{
+    font-size: 24px;
+    font-weight: bold;
+    color: rgb(211, 40, 188);
+}
+.infoExtra {
+    color: rgb(182, 182, 182);
+    font-size: 18px;
+    font-style: italic;
+    font-weight: bold
+
+}
+
+::ng-deep.mat-grid-tile-content{
+    justify-content: left !important;
+    align-items: initial;
+}    
+.test>::ng-deep.mat-grid-tile-content{
+    justify-content: right !important;
+}
+.texto{
+    margin-left: 27px;
+    color: rgba(226, 214, 41, 0.849);
+    font-weight: bold;
+ }
+
+ .centrar>::ng-deep.mat-grid-tile-content{
+     justify-content: center !important;
+ }
+
+.desc{
+    font-size: 15px;
+}
+a{
+    color: aqua;
+}
+a:link, a:visited, a:active{
+    text-decoration: none;
+    color: aqua;
+}
+.tit{
+    font-size: 20px;
+    font-weight: bold;
+   color: aqua;
+
+}
+.proyecto{
+    margin: 15px;
+    padding-bottom: 10px;
+}
+h2{
+    color: darkred;
+    font-weight: bold;
+    font-size: 27;
+}
+p{
+  color:  rgba(226, 214, 41, 0.849);
+  font-weight: bold;
+}

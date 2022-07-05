@@ -1,0 +1,24 @@
+<h1 mat-dialog-title>Crear Proyecto</h1>
+<mat-dialog-content>
+    <div [formGroup]="proyCrear">
+        <mat-form-field>
+            <mat-label>Nombre Proyecto</mat-label>
+            <input matInput  placeholder="Ingrese nombre Proyecto" formControlName="nombreP">
+        </mat-form-field><br>
+        <mat-form-field>
+            <mat-label>Link Proyecto</mat-label>
+            <input matInput  placeholder="Ingrese link del proyecto" formControlName="link">
+        </mat-form-field><br>
+        <mat-form-field>
+            <mat-label>Descripcion </mat-label>
+            <textarea matInput  placeholder="Ingrese una descripcion del proyecto" formControlName="descripcion"></textarea>
+        </mat-form-field>
+        
+
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-raised-button mat-dialog-close color="primary">Salir</button>
+    <button mat-raised-button  color="primary" [attr.disable]="isFormValid()" (click)="crearProy()" cdkFocusInitial>Crear Proyecto</button>
+</mat-dialog-actions>
+

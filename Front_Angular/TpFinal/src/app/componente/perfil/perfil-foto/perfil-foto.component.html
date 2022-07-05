@@ -1,0 +1,25 @@
+<div >
+    <div >
+
+        <img [src]="per?.imagen?.portada" alt="Foto de portada"
+            class="img-portada">
+
+
+        <img [src]="per?.imagen?.perfil"
+            alt="Foto del usuario" class="img-profile borde">
+        <span *ngIf="per">
+            <a (click)="openDialogInfoPEditar(per)" style="font-size: 30px;padding-top: -20px;">
+                <mat-icon>edit_note</mat-icon>
+            </a>
+        </span>
+    </div>
+    <div class="Info" >
+        
+     
+        <p>NomYApe: {{per?.infoPersonal?.nom}} {{per?.infoPersonal?.ape}}</p>
+        <div style="margin-bottom: 15px;">
+            <p>Puesto: {{per?.puesto}}</p>
+            <p>Localidad: {{per?.infoPersonal?.localidad}}</p>
+        </div>
+    </div>
+</div>

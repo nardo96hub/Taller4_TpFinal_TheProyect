@@ -1,0 +1,121 @@
+<mat-tab-group mat-align-tabs="center" color="accent" backgroundColor="primary">
+  <mat-tab label="Registrar">
+    <div class="contenedor">
+      <div class="contenido">
+        <div class="boton">Formulario de Registro</div>
+        <div >
+          <form [formGroup]="registro" (ngSubmit)="registrarUsuario()" action="/">
+          <div style="margin: 10px; ">
+
+            <mat-form-field style="padding: 0 10px;">
+              <mat-label>Nombre</mat-label>
+              <input matInput placeholder="Ingrese su nombre" formControlName="nombre" required>
+
+            </mat-form-field>
+
+            <mat-form-field>
+              <mat-label>Apellido</mat-label>
+              <input matInput placeholder="Ingrese su apellido" formControlName="apellido" required>
+
+            </mat-form-field>
+          </div>
+          <div style="margin: 10px; ">
+
+            <mat-form-field style="padding: 0 10px;">
+              <mat-label>Email</mat-label>
+              <input matInput placeholder="algo@example.com" formControlName="email" required>
+              <!--<mat-error *ngIf="registro.get('email').invalid">{{getErrorMensaje()}}</mat-error>-->
+
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Url Foto</mat-label>
+              <input matInput placeholder="Ingrese la url de su foto" formControlName="foto">
+
+            </mat-form-field>
+
+
+          </div>
+          <div style="margin: 10px; ">
+
+            <mat-form-field  style="width: 170px; padding-right: 7px ;">
+              <mat-label>Usuario</mat-label>
+              <input matInput placeholder="Ingrese Usuario" formControlName="usuario" required>
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Contraseña</mat-label>
+              <input matInput [type]="hide ? 'password' : 'text'" formControlName="contrasena"
+                placeholder="Ingrese Contraseña" required>
+              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+
+            </mat-form-field>
+
+
+          </div>
+
+          <button mat-button class="registro" type="submit" [disabled]="!registro.valid" >Registrar</button>
+        </form>
+        </div>
+      </div>
+    </div>
+  </mat-tab>
+  <!--
+  <mat-tab label="Recuperar Contraseña">
+
+    <div class="contenedor">
+      <div class="contenido">
+        <div class="botonR">Formulario de Recuperar Contraseña</div>
+        <div >
+          <form [formGroup]="recuperar" (ngSubmit)="recuperarUsuario()" >
+          
+          <div style="margin: 10px; ">
+
+            <mat-form-field style="padding: 0 10px;">
+              <mat-label>Email</mat-label>
+              <input matInput placeholder="algo@example.com" formControlName="email" required>
+              
+
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Usuario</mat-label>
+              <input matInput placeholder="Ingrese  su Usuario" formControlName="usuario">
+
+            </mat-form-field>
+
+
+          </div>
+          <div style="margin: 10px; ">
+            <mat-form-field style="width: 183px; padding-right: 7px ;">
+              <mat-label>Antigua Contraseña</mat-label>
+              <input matInput [type]="hide ? 'password' : 'text'" formControlName="contrasena"
+                placeholder="Ingrese Contraseña" required>
+              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+
+            </mat-form-field>
+            <mat-form-field style="width: 183px; padding-right: 7px ;">
+              <mat-label>Nueva Contraseña</mat-label>
+              <input matInput [type]="hideN ? 'password' : 'text'" formControlName="nuevacontra"
+                placeholder="Ingrese Contraseña" required>
+              <button mat-icon-button matSuffix (click)="hideN = !hideN" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide">
+                <mat-icon>{{hideN ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+
+            </mat-form-field>
+
+
+          </div>
+
+          <button mat-button class="registro" type="submit" [disabled]="!recuperar.valid" >Actualizar</button>
+        </form>
+        </div>
+      </div>
+    </div>
+  </mat-tab>
+-->
+</mat-tab-group>

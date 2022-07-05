@@ -1,0 +1,24 @@
+
+<h2>Proyecto <a (click)="openDialogCrearProy()"class="icono">
+    <mat-icon>add_circle</mat-icon>
+</a></h2>
+<div class="contenido">
+    
+    <div *ngFor="let proy of per?.proyecto">
+        <p>
+            <a [href]="proy.link"><span class="titulo">{{proy.nombreP}}</span> 
+                <a (click)="eliminarProy(proy.id_proyecto)" class="icono">
+                    <mat-icon>delete</mat-icon>
+                </a>
+                <a (click)="openDialogEditarProy(proy)" class="icono">
+                    <mat-icon>edit</mat-icon>
+                </a>
+                
+            </a>
+        </p>
+        <p class="descripcion">
+           {{proy.descripcion}}
+        </p>
+    </div>
+   
+</div>

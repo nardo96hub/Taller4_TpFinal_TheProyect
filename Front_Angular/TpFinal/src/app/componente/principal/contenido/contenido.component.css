@@ -1,0 +1,49 @@
+.fondo{
+    height: 23.40em;
+    background-image: url("../../../../assets/img/fondoPrincipal_Normal.png");
+    background-size:     cover;                    
+    background-repeat:   no-repeat;
+    background-position: center center;
+}
+h1{
+    padding-top: 20px;
+    text-align: center;
+    color: blanchedalmond;
+}
+.texto{
+    padding-left: 30px;
+    font-size: 18px;
+    color: antiquewhite;
+}
+.nombre{
+    font-size: 26px;
+    font-weight: bold;
+    color: chartreuse;
+    font-style: italic;
+    text-shadow: black 0.1em 0.1em;
+}
+/* Modo oscuro */
+.fondo.oscuro{
+    height: 23.40em;
+    background-image: url("../../../../assets/img/FondoPrincipal_Oscuro.png");
+    background-size:     cover;                    
+    background-repeat:   no-repeat;
+    background-position: center center;
+}
+.oscuro h1 {
+    padding-top: 20px;
+    text-align: center;
+    color: rgb(8, 241, 210);
+}
+.oscuro .texto{
+    padding-left: 30px;
+    font-size: 18px;
+    color: rgb(226, 128, 0);
+}
+.oscuro .nombre {
+    font-size: 26px;
+    font-weight: bold;
+    color: rgb(255, 0, 234);
+    font-style: italic;
+    text-shadow: rgb(46, 1, 248) 0.1em 0.1em;
+}

@@ -1,0 +1,45 @@
+.icono{
+    font-size: 25px;
+    float: right;
+    padding-right: 5px;
+    padding-left: 5px;
+    text-decoration: none;
+}
+
+.imagen{    
+    height: 50px;
+    width: 50px;  
+}
+.titulo{
+    font-size: 26px;
+    font-weight: bold;
+    color: rgb(211, 40, 188);
+}
+.infoExtra{
+    color: rgb(182, 182, 182);
+    font-size: 18px;
+    font-weight: bold;
+    font-style: italic;
+
+}
+a{
+    color: aqua;
+}
+::ng-deep.mat-grid-tile-content{
+    justify-content: left !important;
+    align-items: initial;
+  
+
+}    
+.test>::ng-deep.mat-grid-tile-content{
+    justify-content: right !important;
+}
+h2{
+    color: darkred;
+    font-weight: bold;
+    font-size: 27;
+}
+p{
+  color:  rgba(226, 214, 41, 0.849);
+  font-weight: bold;
+}

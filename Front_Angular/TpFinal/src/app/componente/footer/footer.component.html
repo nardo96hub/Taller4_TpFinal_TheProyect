@@ -1,0 +1,26 @@
+<div class="fondo" [ngClass]="{'oscuro':oscuro}">
+    <p class="titulo">PROYECTO REALIZADO POR:</p>
+    <p class="info"><span style="font-weight: bold;margin-left: 32px; ">Ape_Nom:</span> {{creador.ape}}
+        {{creador.nom}}<span>
+            <img [src]="creador.foto" alt="Foto Perfil" class="imagen"></span></p>
+    <p class="info"><span style="font-weight: bold; margin-right: 12px;">Email: </span>{{creador.email}}</p>
+    <p class="info"><span style="font-weight: bold;margin-left: 40px; ">Redes Sociales:</span>
+        <a [href]="creador.redes.face" target="_blank" class="ingresar facebook">
+            <mat-icon>facebook</mat-icon>
+        </a>
+        <a [href]="creador.redes.twi" target="_blank" class="ingresar twitter">
+            <mat-icon svgIcon="twitter"></mat-icon>
+        </a>
+        <a [href]="creador.redes.ins" target="_blank" class="ingresar instagram">
+            <mat-icon svgIcon="instagram"></mat-icon>
+        </a>
+        <a [href]="creador.redes.git" target="_blank" class="ingresar github">
+            <mat-icon svgIcon="github"></mat-icon>
+        </a>
+        <a [href]="creador.redes.lin" target="_blank" class="ingresar linkedin">
+            <mat-icon svgIcon="linkedin"></mat-icon>
+        </a>
+
+    </p>
+    <p class="info"> © Copyright Todos los derechos reservados</p>
+</div>

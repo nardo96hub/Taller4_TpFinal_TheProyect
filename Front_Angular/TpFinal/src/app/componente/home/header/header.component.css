@@ -1,0 +1,43 @@
+.navbar{
+    justify-content: space-between;
+    height:68px;
+    background-color:aquamarine;
+    width: 100%;
+}
+.izq{
+    
+    margin-top: 1px;
+}
+.der{
+   padding-left: 50%;
+}
+.mat-form-field{
+    font-size: 17px;
+    width: 140px;
+    margin-left: 6px;
+}
+.mat-form-field .mat-focused{
+    font-size: 20px;
+}
+.mat-form-field .mat-input-element{
+    width: 100%;
+    font-size: 16px;
+} 
+.error{
+    font-size: 8px ;
+    color: red;
+    margin-top: 10px;
+}
+.logo{
+    padding-top: 10px;
+    height: 110px;
+    width: 180px;
+}
+
+/* Modo Oscuro*/
+.oscuro.navbar{
+    justify-content: space-between;
+    height:68px;
+    background-color:rgb(0, 24, 133);
+    color: rgba(255, 255, 255, 0.925);
+}

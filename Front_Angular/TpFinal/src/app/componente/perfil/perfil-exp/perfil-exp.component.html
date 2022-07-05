@@ -1,0 +1,39 @@
+<h2>Experiencia <a (click)="openDialogCrearExp()" class="icono">
+        <mat-icon>add_circle</mat-icon>
+    </a></h2>
+<div id="exp">
+
+    <div *ngIf="per">
+        <div *ngFor="let exp of per.experiencia">
+            <!--Intento-->
+            <mat-grid-list cols="3" rowHeight="75px">
+                <mat-grid-tile colspan="1" class="test"><img src="../../../assets/img/icono_experiencia.png"
+                        alt="" class="imagen"></mat-grid-tile>
+                <mat-grid-tile colspan="1" rowspan="2">
+                    <div>
+                        <p class="titulo">{{exp.titulo}}</p>
+
+                        <p>Empresa: {{exp.empresa}} </p>
+                        <p class="infoExtra">"{{exp.anio}}- {{exp.jornada}}</p>
+                        <p class="infoExtra">{{exp.lugar}}</p>
+                       
+                    </div>
+
+                </mat-grid-tile>
+                <mat-grid-tile colspan="1">
+                    <span>
+                        <a (click)="eliminarExp(exp.id_Exp)" class="icono">
+                            <mat-icon>delete</mat-icon>
+                        </a>
+                        <a (click)="openDialogEditarExp(exp)" class="icono">
+                            <mat-icon>edit</mat-icon>
+                        </a>
+                    </span>
+                </mat-grid-tile>
+
+            </mat-grid-list>
+        
+        </div>
+    </div>
+
+</div>

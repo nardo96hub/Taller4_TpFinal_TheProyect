@@ -1,0 +1,41 @@
+<mat-toolbar class="navbar"  [ngClass]="{'oscuro':modoOscuro}">
+  
+   <img src="../../../../assets/img/logo.png" alt="" class="logo">
+ 
+  <div  class="der">
+    <span style="margin-left: 5px;">
+        
+      <mat-slide-toggle [(ngModel)]="modoOscuro" (click)="modo()" color="warn">
+          <mat-icon color="blue">{{(modoOscuro)? 'brightness_7':'brightness_3'}}</mat-icon>
+      </mat-slide-toggle>
+    </span>
+  </div>
+  <div class="izq">
+   
+    <form [formGroup]="login" (ngSubmit)="logIn($event)">
+      <span *ngIf="isLoginFail" class="error">{{errMsj}}</span>
+      <!--<span class="error">User/Contra invalido</span>-->
+      <mat-form-field>
+        <mat-label>Usuario</mat-label>
+        <input matInput style="max-height: 14px !important;" formControlName="usuario">
+        <mat-error>Usuario requerido</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Contraseña</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'"formControlName="contrasena" style="max-height: 14px !important">
+        <mat-error>Contraseña requerido</mat-error>
+
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide" >
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+
+      </mat-form-field>
+      
+    
+      <button mat-mini-fab type="submit" color="accent">Login</button>
+      
+    </form>
+    
+  </div>
+</mat-toolbar>

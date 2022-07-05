@@ -1,0 +1,36 @@
+.descripcion{
+    font-size: 15px;
+}
+a:link, a:visited, a:active{
+    text-decoration: none;
+    color: aqua;
+}
+.titulo{
+    font-size: 20px;
+    font-weight: bold;
+   color: aqua;
+
+}
+.icono{
+    font-size: 25px;
+    float: right;
+    padding-right: 5px;
+    padding-left: 5px;
+    text-decoration: none;
+}
+a{
+    color: aqua;
+}
+.contenido{
+    margin: 15px;
+    padding-bottom: 10px;
+}
+h2{
+    color: darkred;
+    font-weight: bold;
+    font-size: 27;
+}
+p{
+  color:  rgba(226, 214, 41, 0.849);
+  font-weight: bold;
+}

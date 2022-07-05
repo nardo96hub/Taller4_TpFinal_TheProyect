@@ -1,0 +1,37 @@
+<mat-toolbar class="navbar" [ngClass]="{'oscuro':modoOscuro}">
+    <img src="../../../../assets/img/logo.png" alt="" class="logo">
+        
+   
+    <div class="der">
+        <span style="margin-right: 5px;">
+            <mat-slide-toggle [(ngModel)]="modoOscuro" (click)="modo()" color="warn">
+                <mat-icon color="blue">{{(modoOscuro)? 'brightness_7':'brightness_3'}}</mat-icon>
+            </mat-slide-toggle>
+        </span>
+        <button mat-raised-button (click)="lista()" color="accent" style="margin-right: 10px;margin-left: 10px;">Listar Perfiles</button>
+        <button *ngIf="hasRole('ROLE_ADMIN')" mat-raised-button (click)="admin()" color="accent">Administrador</button>
+
+
+
+      
+        
+    
+
+        <span>
+            <button mat-button [matMenuTriggerFor]="menu">
+
+                <span>
+                    <span><img style="margin-top: 10px;"
+                        [src]="per?.imagen?.perfil"
+                            alt="Foto Perfil" class="imagen"></span>
+                </span> {{per?.infoPersonal?.ape}} {{per?.infoPersonal?.nom}}
+            </button>
+            <mat-menu #menu="matMenu">
+            <!--<a [routerLink]="['/descargaP',per?.usuario?.usuario,'p','r']" style="text-decoration: none;"><button mat-menu-item  >Descargar Perfil</button></a>-->
+            
+            <button mat-menu-item (click)="perfil()">Ver Perfil</button>
+            <button mat-menu-item (click)="logout()">Logout</button>
+            </mat-menu>
+        </span>
+    </div>
+</mat-toolbar>

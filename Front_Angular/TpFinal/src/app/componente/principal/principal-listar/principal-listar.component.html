@@ -1,0 +1,104 @@
+<!--Header-->
+<div [ngClass]="{'oscuro':modoOscuro}">
+    <mat-toolbar class="navbar" >
+        <img src="../../../../assets/img/logo.png" alt="" class="logo">
+        
+        <div class="der">
+            <span style="margin-right: 5px;">
+                <mat-slide-toggle [(ngModel)]="modoOscuro"  (click)="modo()">
+                    <mat-icon>{{(modoOscuro)? 'brightness_3':'brightness_7'}}</mat-icon>
+                    </mat-slide-toggle>
+            </span>
+            
+
+            <span>
+
+                <button mat-button [matMenuTriggerFor]="menu">
+                
+                    <span>
+                        <span><img style="margin-top: 10px;"
+                            [src]="per?.imagen?.perfil"
+                                alt="Foto Perfil" class="foto"></span>
+                    </span> {{per?.infoPersonal?.ape}} {{per?.infoPersonal?.nom}}
+                </button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item routerLink="/perfil">Ver Perfil</button>
+                    <button mat-menu-item (click)="regresar()">Volver</button>
+                <button mat-menu-item (click)="logout()">Logout</button>
+                </mat-menu>
+            </span>
+        </div>
+    </mat-toolbar>
+
+    <!-- Contenido -->        
+    <div class="contenido">
+            
+            <p class="titulo">Lista de todos los usuarios de The Proyect</p>
+            <mat-form-field appearance="outline" class="buscar">
+                <mat-label>Filtrar</mat-label>
+                <input matInput (keyup)="filtroTabla($event)" placeholder="Filtro"#input style="text-align:center;">
+            </mat-form-field>
+            <div class="tabla">
+
+        
+                <table mat-table matSort [dataSource]="tablaPerfiles"  >
+                    <!--Id columna-->
+                    <ng-container matColumnDef="id">
+                    <th mat-header-cell mat-sort-header *matHeaderCellDef style="text-align: center;" >ID</th>
+                    <td mat-cell *matCellDef="let p"> {{p.id_perfil}} </td>
+                    </ng-container>
+                    <!--Foto columna-->
+                    <ng-container matColumnDef="foto">
+                        <th mat-header-cell mat-sort-header *matHeaderCellDef style="text-align: center;"> Foto </th>
+                        <td mat-cell *matCellDef="let p"><img [src]="p.imagen.perfil" class="foto"> </td>
+                    </ng-container>
+                    <!--Nombre y Apellido columna-->
+                    <ng-container matColumnDef="nomYape">
+                        <th mat-header-cell mat-sort-header *matHeaderCellDef style="text-align: center;" > Nombre Y Apellido </th>
+                        <td mat-cell *matCellDef="let p"> {{p.infoPersonal.nom}} {{p.infoPersonal.ape}} </td>
+                    </ng-container>
+                    <!--Puesto columna-->
+                    <ng-container matColumnDef="puesto" >
+                        <th mat-header-cell mat-sort-header *matHeaderCellDef style="text-align: center;"> Puesto Laboral </th>
+                        <td mat-cell *matCellDef="let p"> {{p.puesto}}</td>
+                    </ng-container>
+                    <!--Localidad columna-->
+                    <ng-container matColumnDef="localidad">
+                        <th mat-header-cell mat-sort-header *matHeaderCellDef style="text-align: center;">Localidad</th>
+                        <td mat-cell *matCellDef="let p"> {{p.infoPersonal.localidad}}</td>
+                    </ng-container>
+                    <!--Acerca de Mi columna-->
+                    <ng-container matColumnDef="acerca" >
+                        <th mat-header-cell mat-sort-header *matHeaderCellDef style="text-align: center;"> Acerca de ti </th>
+                        <td mat-cell *matCellDef="let p">{{p.acer.acer}} Acerca</td>
+                    </ng-container>
+                    <!--Ver Perfil columna-->
+                    <ng-container matColumnDef="perfil" >
+                        <th mat-header-cell mat-sort-header *matHeaderCellDef style="text-align: center;"> Ver Perfil </th>
+                        <td mat-cell *matCellDef="let p"> <button mat-raised-button color="warn"(click)="openDialogVerPerfil(p)">Ver Perfil</button> </td>
+                    </ng-container>
+                
+        
+        
+                    <tr mat-header-row *matHeaderRowDef="columna"></tr>
+                    <tr mat-row *matRowDef="let row; columns: columna;"></tr>
+
+                <tr class="mat-row" *matNoDataRow> 
+                        <td class="mat-cell" colspan="4"> 
+                            No hay datos que coincidan con el filtro "{{input.value}}" 
+                            
+                        </td > 
+                        <td class="mat-cell" colspan="3"></td>
+                    </tr>
+
+                </table>
+                <mat-paginator [pageSizeOptions]="listamano" showFirstLastButtons>
+                </mat-paginator>
+                </div>
+        
+    </div>
+
+</div>
+    <app-footer [oscuro]="modoOscuro"></app-footer>
+
+
